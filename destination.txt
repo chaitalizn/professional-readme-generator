@@ -1,6 +1,6 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-const generateReadme = require('./utils/generateMarkdown');
+//const generateReadme = require('./src/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [{
@@ -33,7 +33,7 @@ const questions = [{
 },
 {
   type: 'input',
-  name: 'contribution',
+  name: 'contribution guidelines',
   message: "Enter contribution guidelines for the project",
   //validate property check
   validate: (value)=> {
@@ -75,7 +75,7 @@ const questions = [{
 },
 {
   type: 'input',
-  name: 'tests',
+  name: 'test',
   message: "Enter project test instructions!",
   //validate property check
   validate: (value)=> {
@@ -89,9 +89,9 @@ const questions = [{
 },
 {
   type: 'list',
-  name: 'license',
+  name: 'test',
   message: "Enter type of licence used!",
-  choices:['The MIT', 'Boost', 'Apache', 'GNU', 'Creative Commons', 'Eclipes', 'ISC', 'Mozilla Public License 2.0', 'Unlicense'],
+  choices:['The MIT License', 'The GPL License', 'Apache License', 'GNU License', 'N/A'],
   //validate property check
   validate: (value)=> {
       if (value) {
@@ -104,7 +104,7 @@ const questions = [{
 },
 {
   type: 'input',
-  name: 'githubUsername',
+  name: 'Github username',
   message: "Enter Github username!",
   //validate property check
   validate: (value)=> {
@@ -132,21 +132,21 @@ const questions = [{
 }
 ];
 
-   
+    inquirer.prompt(
+      questions
+    )
+    .then(answers => {
+      // Use user feedback
+      console.log(answers);
+    })
 
 
 
 // TODO: Create a function to write README file
-function writeToFile(readme.md, data) {}
+function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() { inquirer.prompt(
-  questions
-)
-.then(answers => {
-  // Use user feedback
-  generateReadme(answers);
-})}
+function init() {}
 
 // Function call to initialize app
 init();
