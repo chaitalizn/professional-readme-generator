@@ -1,4 +1,5 @@
 const { copyFile, constants } = require('fs');
+const { copyFile, constants } = require('fs');
 
 function callback(err) {
   if (err) throw err;

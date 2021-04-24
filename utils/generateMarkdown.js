@@ -1,34 +1,28 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 const licenseBadge = {
-  ['The MIT']: ['yellow', 'https://opensource.org/licenses/MIT'],
-  boost: ['red', 'https://opensource.org/licenses/EPL-1.0'],
-  apache: [],
-  gnu: ['blue', 'https://www.gnu.org/licenses/gpl-3.0'],
-  creativeCommons: ['http://creativecommons.org/publicdomain/zero/1.0/'],
-  eclipes: [],
-  isc: [],
-  mozillaPublicLicense: ['brightgreen', 'https://opensource.org/licenses/MPL-2.0'],
-  unlicense: [],
+  ['MIT']: ['yellow', 'https://opensource.org/licenses/MIT'],
+  ['Boost']: ['red', 'https://opensource.org/licenses/EPL-1.0'],
+  ['Apache']: ['blue', 'https://opensource.org/licenses/Apache-2.0'],
+  ['GNU']: ['blue', 'https://www.gnu.org/licenses/gpl-3.0'],
+  ['Creative Commons']: ['lightgray', 'http://creativecommons.org/publicdomain/zero/1.0/'],
+  ['Eclipes']: ['red', 'https://opensource.org/licenses/EPL-1.0'],
+  ['ISC']: ['blue', 'https://opensource.org/licenses/ISC'],
+  ['Mozilla Public License 2.0']: ['brightgreen', 'https://opensource.org/licenses/MPL-2.0'],
+  ['Unlicense']: ['blue', 'http://unlicense.org/'],
 }
 
 function renderLicenseBadge(license) {
   return licenseBadge[license];
 }
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseTrim(license) {
+  return (license).replace(/ /g, '');
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(answers) {
-  console.log(renderLicenseBadge(answers.license)[0]);
-  return `
-  <p align="center"> # ${answers.title} </p>
+   return `
+  # ${answers.title}
 
   ---
 
@@ -36,32 +30,32 @@ function generateMarkdown(answers) {
   ${answers.description}
 
   ## Table of Contents
-  * [Description] (#description)
-  * [Installation] (#installation)
-  * [Usage] (#usage)
-  * [License] (#license)
-  * [Contribution] (#contribution)
-  * [Tests] (#tests)
-  * [Questions] (#questions)
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contribution)
+  * [Tests](#tests)
+  * [Questions](#questions)
   
-  ##Installation
+  ## Installation
   ${answers.installation}
 
-  ##Usage
+  ## Usage
   ${answers.usage}
 
-  ##Constribution
+  ## Constributing
   ${answers.contribution}
 
-  ##Tests
+  ## Tests
   ${answers.tests}
 
-  ##License
+  ## License
   ${answers.license}
   
-  [![License: ${answers.license}](https://img.shields.io/badge/License-${answers.license}-${renderLicenseBadge(answers.license)[0]})](${renderLicenseBadge(answers.license)[1]})
+  [![License](https://img.shields.io/badge/License-${renderLicenseTrim(answers.license)}-${renderLicenseBadge(answers.license)[0]})](${renderLicenseBadge(answers.license)[1]})
 
-  ##Questions
+  ## Questions
   Email me or reach out on GitHub with any questions
 
   GitHub Username: ${answers.githubUsername}
@@ -70,7 +64,7 @@ function generateMarkdown(answers) {
 
   ----
 
-  This README was generated with ❤️ by [professional-readme-generator](add link here!)
+  This README was generated with ❤️ by [professional-readme-generator](https://github.com/chaitalizn/professional-readme-generator)
 `;
 }
 
