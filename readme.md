@@ -1,18 +1,18 @@
 
   # professional-readme-generator
-
+  
   ---
 
   ## Description
   Application that uses the inquirer npm package to prompt questions to the user about project information, then using that information a professional README file is generated.
+  * [View application demo](https://drive.google.com/file/d/1XHJdCBlP1UlQM1l-2_Nt5Tzp4fEsaotU/view?usp=sharing)
+  * [View sample readme file generated using application](dist/readme.md)
 
   ## Table of Contents
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
   * [License](#license)
-  * [Contribution](#contribution)
-  * [Tests](#tests)
   * [Questions](#questions)
   
   ## Installation
@@ -29,11 +29,9 @@
   [![License](https://img.shields.io/badge/License-Unlicense-blue)](http://unlicense.org/)
 
   ## Questions
-  Email me or reach out on GitHub with any questions
+  Reach out to me on GitHub with any questions
 
   GitHub Username: chaitalizn
-
-  Email Address: email@email.com
 
   ----
 
